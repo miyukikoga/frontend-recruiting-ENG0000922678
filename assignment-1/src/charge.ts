@@ -49,7 +49,7 @@ export function charge(invoice: Invoice, payments: Payment[]) {
 /**
  * 支払い方法が商品券か判定する
  * 型ガードも行う
- * @param type 支払い方法
+ * @param payment 支払い
  * @returns 商品券かどうか
  */
 const isCouponPayment = (payment: unknown): payment is CouponPayment => {
@@ -58,32 +58,32 @@ const isCouponPayment = (payment: unknown): payment is CouponPayment => {
 
 /**
  * 支払額を計算する
- * @param currentPayment 今回の支払い
+ * @param payment 今回の支払い
  * @param invoiceTotal 請求額合計
  * @returns 支払額
  */
-const calculateDeposit = (currentPayment: Payment, invoiceTotal: number): number => {
-  if (isCouponPayment(currentPayment))
-    return calculateDepositByCoupon(currentPayment.percentage, currentPayment.amount, invoiceTotal);
-  return currentPayment.amount;
+const calculateDeposit = (payment: Payment, invoiceTotal: number): number => {
+  if (isCouponPayment(payment))
+    return calculateDepositByCoupon(payment.percentage, payment.amount, invoiceTotal);
+  return payment.amount;
 };
 
 /**
  * 商品券による支払額を計算する
- * @param couponPercentage
+ * @param paymentPercentage 支払い割合(%)
  * @param deposit 支払い額
  * @param invoiceTotal 請求額合計
  * @returns 支払額
  */
 const calculateDepositByCoupon = (
-  percentage: number | undefined,
-  amount: number | undefined,
+  paymentPercentage: number | undefined,
+  deposit: number | undefined,
   invoiceTotal: number,
 ): number => {
-  if (percentage != undefined) {
-    return Math.floor(invoiceTotal * (percentage / 100));
+  if (paymentPercentage != undefined) {
+    return Math.floor(invoiceTotal * (paymentPercentage / 100));
   }
-  return amount || 0;
+  return deposit || 0;
 };
 
 /**
