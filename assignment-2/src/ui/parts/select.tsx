@@ -5,8 +5,13 @@ type SelectProps = {
 };
 
 export const Select = (props: SelectProps): JSX.Element => {
+  const onChangeHandler: React.ChangeEventHandler<HTMLSelectElement> = (e) => {
+    props.setValue(e.target.value);
+    e.target.style.color = "black";
+  };
+
   return (
-    <select className="Input" onChange={(e) => props.setValue(e.target.value)}>
+    <select className="Select" onChange={onChangeHandler}>
       <option hidden value="">
         {props.placeholder}
       </option>
