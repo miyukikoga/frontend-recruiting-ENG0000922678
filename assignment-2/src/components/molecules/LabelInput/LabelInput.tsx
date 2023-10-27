@@ -1,5 +1,6 @@
-import { Label } from "../parts/label";
-import { Input } from "../parts/input";
+import { Label } from "../../atoms/Label";
+import { Input } from "../../atoms/Input";
+import "./labelInput.scss";
 
 type InputProps = {
   label: string;

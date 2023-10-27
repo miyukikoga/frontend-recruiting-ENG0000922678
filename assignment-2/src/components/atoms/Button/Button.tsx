@@ -1,3 +1,5 @@
+import "./button.scss";
+
 type ButtonProps = {
   label: string;
   disabled: boolean;

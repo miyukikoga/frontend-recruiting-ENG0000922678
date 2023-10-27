@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { LabelInput } from "./labelInput";
-import { LabelSelect } from "./labelSelect";
-import { Button } from "../parts/button";
-import { prefectures } from "../../constants/prefectures";
-import { url, formInfo, validationMessages } from "../../constants/form";
+import { LabelInput } from "../../molecules/LabelInput";
+import { LabelSelect } from "../../molecules/LabelSelect";
+import { Button } from "../../atoms/Button";
+import { prefectures } from "../../../constants/prefectures";
+import { url, formInfo, validationMessages } from "../../../constants/form";
+import "./form.scss";
 
 export const Form = () => {
   const [name, setName] = useState<string>("");

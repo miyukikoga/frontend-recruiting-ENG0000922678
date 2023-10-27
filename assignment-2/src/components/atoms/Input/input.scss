@@ -1,0 +1,17 @@
+.Input {
+  width: 230px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #e2e2e2;
+  background: #fff;
+}
+
+.InputError {
+  width: 230px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: 1px solid #f00;
+  background: #fff;
+}

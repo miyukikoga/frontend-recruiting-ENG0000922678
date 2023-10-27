@@ -1,3 +1,5 @@
+import "./label.scss";
+
 type InputProps = {
   label: string;
 };

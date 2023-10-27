@@ -1,3 +1,5 @@
+import "./input.scss";
+
 type InputProps = {
   placeholder: string;
   errorMessage: string;

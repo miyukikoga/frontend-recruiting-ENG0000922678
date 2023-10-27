@@ -1,5 +1,6 @@
-import { Label } from "../parts/label";
-import { Select } from "../parts/select";
+import { Label } from "../../atoms/Label";
+import { Select } from "../../atoms/Select";
+import "./labelSelect.scss";
 
 type SelectProps = {
   label: string;

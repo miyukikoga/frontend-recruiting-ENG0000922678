@@ -1,0 +1,16 @@
+.Form {
+  place-items: center;
+  width: 399px;
+  height: 400px;
+  flex-shrink: 0;
+}
+
+.ErrorMessage {
+  text-align: left;
+  color: #fb0000;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

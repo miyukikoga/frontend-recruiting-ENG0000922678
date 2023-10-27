@@ -1,3 +1,5 @@
+import "./select.scss";
+
 type SelectProps = {
   placeholder: string;
   items: string[];
